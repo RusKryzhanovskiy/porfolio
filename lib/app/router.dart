@@ -1,9 +1,9 @@
 import 'package:go_router/go_router.dart';
 import 'app_shell.dart';
-import '../features/portfolio/portfolio_routes.dart';
-import '../features/markets/presentation/markets_routes.dart';
-import '../features/analytics/analytics_routes.dart';
-import '../features/profile/profile_routes.dart';
+import '../modules/portfolio/portfolio_routes.dart';
+import '../modules/markets/presentation/markets_routes.dart';
+import '../modules/analytics/analytics_routes.dart';
+import '../modules/profile/profile_routes.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/portfolio',

@@ -2,7 +2,7 @@
 
 A cross-platform mobile application built with Flutter for tracking investment portfolios, monitoring crypto markets, and analyzing financial assets.
 
-## Features
+## Modules
 
 - 📊 Real-time crypto market data
 - 💼 Portfolio management
@@ -17,7 +17,7 @@ The project follows a feature-first architecture with clean separation of concer
 
 ```
 lib/
-├── features/          # Feature modules
+├── modules/           # Modules
 │   ├── markets/       # Crypto markets feature
 │   ├── portfolio/     # Portfolio management
 │   ├── profile/       # User settings

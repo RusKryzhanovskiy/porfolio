@@ -6,7 +6,7 @@ class AppShell extends StatelessWidget {
   final Widget child;
   const AppShell({super.key, required this.child});
 
-  static const _tabs = ['/portfolio', '/markets', '/analytics', '/profile'];
+  static const _tabs = ['/markets', '/portfolio', '/analytics', '/profile'];
 
   @override
   Widget build(BuildContext context) {
@@ -31,22 +31,10 @@ class AppShell extends StatelessWidget {
         },
         showUnselectedLabels: true,
         items: [
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.pie_chart),
-            label: loc.portfolioTab,
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.show_chart),
-            label: loc.marketsTab,
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.analytics),
-            label: loc.analyticsTab,
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.person),
-            label: loc.profileTab,
-          ),
+          BottomNavigationBarItem(icon: const Icon(Icons.show_chart), label: loc.marketsTab),
+          BottomNavigationBarItem(icon: const Icon(Icons.pie_chart), label: loc.portfolioTab),
+          BottomNavigationBarItem(icon: const Icon(Icons.analytics), label: loc.analyticsTab),
+          BottomNavigationBarItem(icon: const Icon(Icons.person), label: loc.profileTab),
         ],
       ),
     );

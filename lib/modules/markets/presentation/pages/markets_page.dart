@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:portfolio/features/markets/domain/models/crypto_market_data.dart';
-import 'package:portfolio/features/markets/presentation/cubit/markets_cubit.dart';
-import 'package:portfolio/features/markets/presentation/cubit/markets_state.dart';
+import 'package:portfolio/modules/markets/domain/models/crypto_market_data.dart';
+import 'package:portfolio/modules/markets/presentation/cubit/markets_cubit.dart';
+import 'package:portfolio/modules/markets/presentation/cubit/markets_state.dart';
 import 'package:portfolio/l10n/app_localizations.dart';
 import 'package:portfolio/services/currency_manager.dart';
 

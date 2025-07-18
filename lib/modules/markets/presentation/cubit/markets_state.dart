@@ -1,4 +1,4 @@
-import 'package:portfolio/features/markets/domain/models/crypto_market_data.dart';
+import 'package:portfolio/modules/markets/domain/models/crypto_market_data.dart';
 
 sealed class MarketsState {
   const MarketsState();

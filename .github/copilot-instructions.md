@@ -6,7 +6,7 @@ This is a Flutter mobile application project for portfolio tracking. The codebas
 ## Architecture & Key Files
 - **lib/main.dart**: Application entry point
 - **lib/app.dart**: Root widget with provider setup and global configuration
-- **lib/features/**: Feature modules (markets, portfolio, profile, etc.)
+- **lib/modules/**: Feature modules (markets, portfolio, profile, etc.)
   - **/domain/**: Models and business logic
   - **/data/**: Repositories and data sources
   - **/presentation/**: UI components (pages, widgets) and state management
@@ -60,7 +60,7 @@ This is a Flutter mobile application project for portfolio tracking. The codebas
 ## Code Organization
 - **Feature Module Structure**:
   ```
-  features/
+  modules/
     ├── feature_name/
     │   ├── domain/
     │   │   ├── models/
