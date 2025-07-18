@@ -12,7 +12,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'Portfolio Tracker';
 
   @override
-  String get porfolioTab => 'Portfolio';
+  String get portfolioTab => 'Portfolio';
 
   @override
   String get marketsTab => 'Markets';
@@ -36,7 +36,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get changeLanguage => 'Change language:';
 
   @override
-  String get porfolioDetailsTitle => 'Portfolio Details';
+  String get portfolioDetailsTitle => 'Portfolio Details';
 
   @override
   String get assetBtc => 'BTC';

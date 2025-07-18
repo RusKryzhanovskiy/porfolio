@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:porfolio/core/network/api_result.dart';
-import 'package:porfolio/core/network/basic_network_error.dart';
+import 'package:portfolio/core/network/api_result.dart';
+import 'package:portfolio/core/network/basic_network_error.dart';
 
 class NetworkService {
   NetworkService() {

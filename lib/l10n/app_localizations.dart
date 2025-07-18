@@ -104,11 +104,11 @@ abstract class AppLocalizations {
   /// **'Portfolio Tracker'**
   String get appTitle;
 
-  /// No description provided for @porfolioTab.
+  /// No description provided for @portfolioTab.
   ///
   /// In en, this message translates to:
   /// **'Portfolio'**
-  String get porfolioTab;
+  String get portfolioTab;
 
   /// No description provided for @marketsTab.
   ///
@@ -152,11 +152,11 @@ abstract class AppLocalizations {
   /// **'Change language:'**
   String get changeLanguage;
 
-  /// No description provided for @porfolioDetailsTitle.
+  /// No description provided for @portfolioDetailsTitle.
   ///
   /// In en, this message translates to:
   /// **'Portfolio Details'**
-  String get porfolioDetailsTitle;
+  String get portfolioDetailsTitle;
 
   /// No description provided for @assetBtc.
   ///

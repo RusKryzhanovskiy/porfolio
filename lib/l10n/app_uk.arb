@@ -1,6 +1,6 @@
 {
   "appTitle": "Трекер портфеля",
-  "porfolioTab": "Портфель",
+  "portfolioTab": "Портфель",
   "marketsTab": "Ринки",
   "analyticsTab": "Аналітика",
   "profileTab": "Профіль",
@@ -8,7 +8,7 @@
   "language": "Мова",
   "currency": "Валюта",
   "changeLanguage": "Змінити мову:",
-  "porfolioDetailsTitle": "Деталі портфеля",
+  "portfolioDetailsTitle": "Деталі портфеля",
   "assetBtc": "BTC",
   "assetAmountBtc": "Кількість: {amount} BTC",
   "@assetAmountBtc": {

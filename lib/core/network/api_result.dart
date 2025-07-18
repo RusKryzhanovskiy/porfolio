@@ -1,4 +1,4 @@
-import 'package:porfolio/core/network/basic_network_error.dart';
+import 'package:portfolio/core/network/basic_network_error.dart';
 
 sealed class ApiResult<T> {
   const ApiResult();

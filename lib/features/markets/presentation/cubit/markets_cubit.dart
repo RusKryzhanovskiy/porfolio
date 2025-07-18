@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:porfolio/core/network/api_result.dart';
-import 'package:porfolio/core/network/basic_network_error.dart';
-import 'package:porfolio/features/markets/data/crypto_markets_repository.dart';
-import 'package:porfolio/features/markets/presentation/cubit/markets_state.dart';
-import 'package:porfolio/services/currency_manager.dart';
+import 'package:portfolio/core/network/api_result.dart';
+import 'package:portfolio/core/network/basic_network_error.dart';
+import 'package:portfolio/features/markets/data/crypto_markets_repository.dart';
+import 'package:portfolio/features/markets/presentation/cubit/markets_state.dart';
+import 'package:portfolio/services/currency_manager.dart';
 
 class MarketsCubit extends Cubit<MarketsState> {
   MarketsCubit({

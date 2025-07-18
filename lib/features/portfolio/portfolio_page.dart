@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:porfolio/l10n/app_localizations.dart';
+import 'package:portfolio/l10n/app_localizations.dart';
 
 class PortfolioPage extends StatelessWidget {
   const PortfolioPage({super.key});
@@ -9,14 +9,14 @@ class PortfolioPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.porfolioTab)),
+      appBar: AppBar(title: Text(l10n.portfolioTab)),
       body: ListView(
         children: [
           ListTile(
-            title: Text('${l10n.porfolioTab} #1'),
+            title: Text('${l10n.portfolioTab} #1'),
             subtitle: const Text('Total Balance: 10000 USD'),
             onTap: () {
-              context.go('/porfolio/details');
+              context.go('/portfolio/details');
             },
           ),
         ],
@@ -32,7 +32,7 @@ class PortfolioDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.porfolioDetailsTitle)),
+      appBar: AppBar(title: Text(l10n.portfolioDetailsTitle)),
       body: ListView(
         children: [
           ListTile(

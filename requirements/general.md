@@ -24,8 +24,8 @@ Users can track and manage their investments across various asset classes in rea
 ## 🔑 Core Features
 
 ### ✅ Portfolio Management
-- Create and manage multiple porfolios
-- Add or remove assets from each porfolio
+- Create and manage multiple portfolios
+- Add or remove assets from each portfolio
 - Asset types supported:
   - Cryptocurrency
   - Stocks
@@ -35,10 +35,10 @@ Users can track and manage their investments across various asset classes in rea
 
 ### 📈 Asset Analytics
 - Fetch real-time prices for supported asset types
-- View charts and analytics per porfolio:
+- View charts and analytics per portfolio:
   - Performance over time
   - Best/Worst performers
-  - Total porfolio balance
+  - Total portfolio balance
 
 ### ☁️ Data Storage & Sync
 - Offline-first: all data stored locally using Hive

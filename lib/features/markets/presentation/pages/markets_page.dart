@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:porfolio/features/markets/domain/models/crypto_market_data.dart';
-import 'package:porfolio/features/markets/presentation/cubit/markets_cubit.dart';
-import 'package:porfolio/features/markets/presentation/cubit/markets_state.dart';
-import 'package:porfolio/l10n/app_localizations.dart';
-import 'package:porfolio/services/currency_manager.dart';
+import 'package:portfolio/features/markets/domain/models/crypto_market_data.dart';
+import 'package:portfolio/features/markets/presentation/cubit/markets_cubit.dart';
+import 'package:portfolio/features/markets/presentation/cubit/markets_state.dart';
+import 'package:portfolio/l10n/app_localizations.dart';
+import 'package:portfolio/services/currency_manager.dart';
 
 class MarketsPage extends StatelessWidget {
   const MarketsPage({super.key});

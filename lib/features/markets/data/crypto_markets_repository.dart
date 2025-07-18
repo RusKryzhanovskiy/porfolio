@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:porfolio/core/network/api_result.dart';
-import 'package:porfolio/core/repository/base_repository.dart';
-import 'package:porfolio/features/markets/domain/models/crypto_market_data.dart';
+import 'package:portfolio/core/network/api_result.dart';
+import 'package:portfolio/core/repository/base_repository.dart';
+import 'package:portfolio/features/markets/domain/models/crypto_market_data.dart';
 
 class CryptoMarketsRepository extends BaseRepository {
   CryptoMarketsRepository({required super.networkService, required super.cacheService});

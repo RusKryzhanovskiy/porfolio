@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:porfolio/l10n/app_localizations.dart';
-import 'package:porfolio/services/currency_manager.dart';
-import 'package:porfolio/services/locale_manager.dart';
+import 'package:portfolio/l10n/app_localizations.dart';
+import 'package:portfolio/services/currency_manager.dart';
+import 'package:portfolio/services/locale_manager.dart';
 import 'package:provider/provider.dart';
 
 class ProfilePage extends StatelessWidget {

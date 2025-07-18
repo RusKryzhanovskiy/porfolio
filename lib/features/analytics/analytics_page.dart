@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:porfolio/l10n/app_localizations.dart';
+import 'package:portfolio/l10n/app_localizations.dart';
 
 class AnalyticsPage extends StatelessWidget {
   const AnalyticsPage({super.key});

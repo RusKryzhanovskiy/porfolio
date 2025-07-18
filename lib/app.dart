@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:porfolio/core/cache/cache_service.dart';
-import 'package:porfolio/core/network/network_service.dart';
-import 'package:porfolio/features/markets/data/crypto_markets_repository.dart';
-import 'package:porfolio/features/markets/presentation/cubit/markets_cubit.dart';
-import 'package:porfolio/l10n/app_localizations.dart';
-import 'package:porfolio/router.dart';
-import 'package:porfolio/services/currency_manager.dart';
-import 'package:porfolio/services/locale_manager.dart';
+import 'package:portfolio/core/cache/cache_service.dart';
+import 'package:portfolio/core/network/network_service.dart';
+import 'package:portfolio/features/markets/data/crypto_markets_repository.dart';
+import 'package:portfolio/features/markets/presentation/cubit/markets_cubit.dart';
+import 'package:portfolio/l10n/app_localizations.dart';
+import 'package:portfolio/router.dart';
+import 'package:portfolio/services/currency_manager.dart';
+import 'package:portfolio/services/locale_manager.dart';
 import 'package:provider/provider.dart';
 
 class PortfolioApp extends StatelessWidget {

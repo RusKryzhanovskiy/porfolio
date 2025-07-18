@@ -6,11 +6,11 @@ import 'features/analytics/analytics_routes.dart';
 import 'features/profile/profile_routes.dart';
 
 final GoRouter appRouter = GoRouter(
-  initialLocation: '/porfolio',
+  initialLocation: '/portfolio',
   routes: [
     ShellRoute(
       builder: (context, state, child) => AppShell(child: child),
-      routes: [...porfolioRoutes, ...marketsRoutes, ...analyticsRoutes, ...profileRoutes],
+      routes: [...portfolioRoutes, ...marketsRoutes, ...analyticsRoutes, ...profileRoutes],
     ),
   ],
 );

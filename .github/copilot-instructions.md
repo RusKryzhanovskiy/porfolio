@@ -1,12 +1,12 @@
 # Copilot Instructions for AI Agents
 
 ## Project Overview
-This is a Flutter mobile application project for porfolio tracking. The codebase is structured for cross-platform development (Android/iOS) using Dart and Flutter, following a feature-first architecture with clean separation of concerns.
+This is a Flutter mobile application project for portfolio tracking. The codebase is structured for cross-platform development (Android/iOS) using Dart and Flutter, following a feature-first architecture with clean separation of concerns.
 
 ## Architecture & Key Files
 - **lib/main.dart**: Application entry point
 - **lib/app.dart**: Root widget with provider setup and global configuration
-- **lib/features/**: Feature modules (markets, porfolio, profile, etc.)
+- **lib/features/**: Feature modules (markets, portfolio, profile, etc.)
   - **/domain/**: Models and business logic
   - **/data/**: Repositories and data sources
   - **/presentation/**: UI components (pages, widgets) and state management
@@ -107,4 +107,4 @@ This is a Flutter mobile application project for porfolio tracking. The codebase
 - [Hive Database](https://docs.hivedb.dev/)
 
 ---
-_These instructions reflect the current architecture and patterns used in the porfolio tracking app. Update as new patterns emerge._
+_These instructions reflect the current architecture and patterns used in the portfolio tracking app. Update as new patterns emerge._

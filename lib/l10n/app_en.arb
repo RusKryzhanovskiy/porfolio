@@ -1,6 +1,6 @@
 {
   "appTitle": "Portfolio Tracker",
-  "porfolioTab": "Portfolio",
+  "portfolioTab": "Portfolio",
   "marketsTab": "Markets",
   "analyticsTab": "Analytics",
   "profileTab": "Profile",
@@ -8,7 +8,7 @@
   "language": "Language",
   "currency": "Currency",
   "changeLanguage": "Change language:",
-  "porfolioDetailsTitle": "Portfolio Details",
+  "portfolioDetailsTitle": "Portfolio Details",
   "assetBtc": "BTC",
   "assetAmountBtc": "Amount: {amount} BTC",
   "@assetAmountBtc": {

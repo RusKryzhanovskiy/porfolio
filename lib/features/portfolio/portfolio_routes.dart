@@ -1,15 +1,15 @@
 import 'package:go_router/go_router.dart';
 import 'portfolio_page.dart';
 
-final List<GoRoute> porfolioRoutes = [
+final List<GoRoute> portfolioRoutes = [
   GoRoute(
-    path: '/porfolio',
-    name: 'porfolio',
+    path: '/portfolio',
+    name: 'portfolio',
     builder: (context, state) => const PortfolioPage(),
     routes: [
       GoRoute(
         path: 'details',
-        name: 'porfolioDetails',
+        name: 'portfolioDetails',
         builder: (context, state) => const PortfolioDetailsPage(),
         routes: [
           GoRoute(

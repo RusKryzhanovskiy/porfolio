@@ -5,7 +5,7 @@ class AppShell extends StatelessWidget {
   final Widget child;
   const AppShell({super.key, required this.child});
 
-  static const _tabs = ['/porfolio', '/markets', '/analytics', '/profile'];
+  static const _tabs = ['/portfolio', '/markets', '/analytics', '/profile'];
 
   @override
   Widget build(BuildContext context) {

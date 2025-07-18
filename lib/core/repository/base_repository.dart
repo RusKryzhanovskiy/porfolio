@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:porfolio/core/cache/cache_service.dart';
-import 'package:porfolio/core/network/api_result.dart';
-import 'package:porfolio/core/network/network_service.dart';
+import 'package:portfolio/core/cache/cache_service.dart';
+import 'package:portfolio/core/network/api_result.dart';
+import 'package:portfolio/core/network/network_service.dart';
 
 abstract class BaseRepository {
   final NetworkService _networkService;

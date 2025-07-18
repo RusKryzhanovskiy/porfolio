@@ -12,7 +12,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get appTitle => 'Трекер портфеля';
 
   @override
-  String get porfolioTab => 'Портфель';
+  String get portfolioTab => 'Портфель';
 
   @override
   String get marketsTab => 'Ринки';
@@ -36,7 +36,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get changeLanguage => 'Змінити мову:';
 
   @override
-  String get porfolioDetailsTitle => 'Деталі портфеля';
+  String get portfolioDetailsTitle => 'Деталі портфеля';
 
   @override
   String get assetBtc => 'BTC';
