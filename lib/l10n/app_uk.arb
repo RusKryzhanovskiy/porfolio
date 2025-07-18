@@ -1,0 +1,36 @@
+{
+  "appTitle": "Трекер портфеля",
+  "porfolioTab": "Портфель",
+  "marketsTab": "Ринки",
+  "analyticsTab": "Аналітика",
+  "profileTab": "Профіль",
+  "settings": "Налаштування",
+  "language": "Мова",
+  "currency": "Валюта",
+  "changeLanguage": "Змінити мову:",
+  "porfolioDetailsTitle": "Деталі портфеля",
+  "assetBtc": "BTC",
+  "assetAmountBtc": "Кількість: {amount} BTC",
+  "@assetAmountBtc": {
+    "description": "Bitcoin amount display",
+    "placeholders": {
+      "amount": {
+        "type": "double",
+        "example": "0.5"
+      }
+    }
+  },
+  "assetAapl": "AAPL",
+  "assetAmountAapl": "Кількість: {amount}",
+  "@assetAmountAapl": {
+    "description": "Apple stock amount display",
+    "placeholders": {
+      "amount": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "assetDetailsTitle": "Деталі активу",
+  "assetDetailsDummy": "Тестові деталі активу"
+}
