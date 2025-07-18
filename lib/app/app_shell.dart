@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:portfolio/l10n/app_localizations.dart';
 
 class AppShell extends StatelessWidget {
   final Widget child;
@@ -10,6 +11,7 @@ class AppShell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final location = GoRouterState.of(context).matchedLocation;
+    final loc = AppLocalizations.of(context)!;
     int currentIndex = _tabs.indexWhere((tab) => location.startsWith(tab));
     if (currentIndex == -1) currentIndex = 0;
 
@@ -28,11 +30,23 @@ class AppShell extends StatelessWidget {
           context.replace(_tabs[index]);
         },
         showUnselectedLabels: true,
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.pie_chart), label: 'Portfolio'),
-          BottomNavigationBarItem(icon: Icon(Icons.show_chart), label: 'Markets'),
-          BottomNavigationBarItem(icon: Icon(Icons.analytics), label: 'Analytics'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        items: [
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.pie_chart),
+            label: loc.portfolioTab,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.show_chart),
+            label: loc.marketsTab,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.analytics),
+            label: loc.analyticsTab,
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.person),
+            label: loc.profileTab,
+          ),
         ],
       ),
     );

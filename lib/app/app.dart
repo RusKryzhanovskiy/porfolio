@@ -6,7 +6,7 @@ import 'package:portfolio/core/network/network_service.dart';
 import 'package:portfolio/features/markets/data/crypto_markets_repository.dart';
 import 'package:portfolio/features/markets/presentation/cubit/markets_cubit.dart';
 import 'package:portfolio/l10n/app_localizations.dart';
-import 'package:portfolio/router.dart';
+import 'package:portfolio/app/router.dart';
 import 'package:portfolio/services/currency_manager.dart';
 import 'package:portfolio/services/locale_manager.dart';
 import 'package:provider/provider.dart';
