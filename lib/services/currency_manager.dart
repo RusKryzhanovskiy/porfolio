@@ -18,7 +18,6 @@ class CurrencyManager extends ChangeNotifier {
   Currency _currency = Currency.usd;
   Currency get currency => _currency;
 
-  /// Loads the saved currency from Hive or uses USD as default
   Future<void> loadCurrency() async {
     final box = await Hive.openBox(_boxName);
     final savedCurrency = box.get(_currencyKey);
@@ -27,11 +26,9 @@ class CurrencyManager extends ChangeNotifier {
         (c) => c.code == savedCurrency,
         orElse: () => Currency.usd,
       );
-      notifyListeners();
     }
   }
 
-  /// Updates the currency and saves it to Hive
   Future<void> updateCurrency(Currency newCurrency) async {
     final box = await Hive.openBox(_boxName);
     await box.put(_currencyKey, newCurrency.code);

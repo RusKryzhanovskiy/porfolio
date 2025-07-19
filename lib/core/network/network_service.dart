@@ -2,25 +2,28 @@ import 'package:dio/dio.dart';
 import 'package:portfolio/core/network/api_result.dart';
 import 'package:portfolio/core/network/basic_network_error.dart';
 
+
 class NetworkService {
   NetworkService() {
     _dio = Dio(
       BaseOptions(
-        connectTimeout: const Duration(seconds: 5),
-        receiveTimeout: const Duration(seconds: 3),
+        validateStatus: (status) => true,
+        sendTimeout: const Duration(seconds: 30),
+        connectTimeout: const Duration(seconds: 30),
+        receiveTimeout: const Duration(seconds: 30),
       ),
     );
   }
 
   late final Dio _dio;
 
-  Future<ApiResult<T>> get<T>(
+  Future<ApiResult<T>> request<T>(
     String path, {
     Map<String, dynamic>? queryParameters,
     Options? options,
   }) async {
     try {
-      final response = await _dio.get<T>(path, queryParameters: queryParameters, options: options);
+      final response = await _dio.request(path, queryParameters: queryParameters, options: options,);
 
       return ApiResult.success(data: response.data as T);
     } on DioException catch (e) {

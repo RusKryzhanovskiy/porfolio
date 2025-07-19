@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'hive_service.dart';
 
 class LocaleManager extends ChangeNotifier {
-  Locale _locale = const Locale('en');
+  static const Locale ukrainian = Locale('uk');
+  static const Locale english = Locale('en');
+
+  static const List<Locale> supportedLocales = <Locale>[ukrainian, english];
+
+  Locale _locale = english;
 
   Locale get locale => _locale;
 

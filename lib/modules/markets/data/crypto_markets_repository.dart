@@ -1,33 +1,48 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:portfolio/core/network/api_result.dart';
 import 'package:portfolio/core/repository/base_repository.dart';
 import 'package:portfolio/modules/markets/domain/models/crypto_market_data.dart';
 
-class CryptoMarketsRepository extends BaseRepository {
-  CryptoMarketsRepository({required super.networkService, required super.cacheService});
+abstract interface class ICryptoMarketsRepository {
+  Future<ApiResult<List<CryptoMarketData>>> getTopCryptos({
+    int limit = 100,
+    bool forceRefresh = false,
+    String currency = 'USD',
+  });
+}
 
-  static const _baseUrl = 'https://pro-api.coinmarketcap.com/v1';
+class CryptoMarketsRepositoryImpl implements ICryptoMarketsRepository {
+  CryptoMarketsRepositoryImpl({required IBaseRepository baseRepository})
+    : _baseRepository = baseRepository;
 
-  String get _apiKey => dotenv.env['COINMARKETCAP_API_KEY'] ?? '';
+  final IBaseRepository _baseRepository;
 
+  static const String _baseUrl = 'https://pro-api.coinmarketcap.com/v1';
+  static const String _listingsEndpoint = '$_baseUrl/cryptocurrency/listings/latest';
+
+  @override
   Future<ApiResult<List<CryptoMarketData>>> getTopCryptos({
     int limit = 100,
     bool forceRefresh = false,
     String currency = 'USD',
   }) async {
-    return fetchData<List<CryptoMarketData>, Map<String, dynamic>>(
-      endpoint: '$_baseUrl/cryptocurrency/listings/latest',
-      params: {'limit': limit, 'convert': currency},
-      options: Options(headers: {'X-CMC_PRO_API_KEY': _apiKey}),
+    return _baseRepository.fetchData<List<CryptoMarketData>, Map<String, dynamic>>(
+      method: RequestMethod.get,
+      endpoint: _listingsEndpoint,
       forceRefresh: forceRefresh,
-      maxAge: const Duration(minutes: 15),
-      mapData: (data) => (data['data'] as List)
-          .map(
-            (crypto) =>
-                CryptoMarketData.fromJson(crypto as Map<String, dynamic>, currency: currency),
-          )
-          .toList(),
+      queryParameters: {'limit': limit, 'convert': currency},
+      headrers: apiHeaders,
+      maxAge: const Duration(hours: 1),
+      mapData: (data) {
+        return (data['data']).map((crypto) {
+          return CryptoMarketData.fromJson(crypto, currency: currency);
+        }).toList().cast<CryptoMarketData>();
+      },
     );
+  }
+
+  Map<String, String> get apiHeaders {
+    final apiKey = dotenv.env['COINMARKETCAP_API_KEY'] ?? '';
+    return <String, String>{'X-CMC_PRO_API_KEY': apiKey};
   }
 }

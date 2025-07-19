@@ -4,34 +4,42 @@ import 'package:portfolio/core/cache/cache_service.dart';
 import 'package:portfolio/core/network/api_result.dart';
 import 'package:portfolio/core/network/network_service.dart';
 
-abstract class BaseRepository {
+enum RequestMethod { get, post, put, delete }
+
+abstract interface class IBaseRepository {
+  Future<ApiResult<T>> fetchData<T, R>({
+    required String endpoint,
+    required RequestMethod method,
+    required T Function(R data) mapData,
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headrers,
+    bool forceRefresh = false,
+    Duration? maxAge,
+  });
+}
+
+class BaseRepositoryImpl implements IBaseRepository {
   final NetworkService _networkService;
   final CacheService _cacheService;
 
-  BaseRepository({required NetworkService networkService, required CacheService cacheService})
+  BaseRepositoryImpl ({required NetworkService networkService, required CacheService cacheService})
     : _networkService = networkService,
       _cacheService = cacheService;
 
-  /// Fetches data with offline-first approach
-  ///
-  /// [endpoint] - API endpoint
-  /// [params] - Query parameters
-  /// [forceRefresh] - If true, ignores cache and fetches from network
-  /// [maxAge] - Maximum age of cached data, null means no expiration
-  /// [mapData] - Function to map raw data to desired type
+  @override
   Future<ApiResult<T>> fetchData<T, R>({
     required String endpoint,
-    Map<String, dynamic>? params,
+    required RequestMethod method,
+    required T Function(R data) mapData,
+    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? headrers,
     bool forceRefresh = false,
     Duration? maxAge,
-    Options? options,
-    required T Function(R data) mapData,
   }) async {
-    // Try to get cached data first if not forcing refresh
     if (!forceRefresh) {
       final cachedData = await _cacheService.getCachedData<R>(
         endpoint: endpoint,
-        params: params,
+        params: queryParameters,
         maxAge: maxAge,
       );
 
@@ -40,19 +48,22 @@ abstract class BaseRepository {
       }
     }
 
-    // If no cached data or force refresh, fetch from network
-    final result = await _networkService.get<R>(
+    final result = await _networkService.request<R>(
       endpoint,
-      queryParameters: params,
-      options: options,
+      queryParameters: queryParameters,
+      options: Options(
+        method: method.name.toUpperCase(),
+        responseType: ResponseType.json,
+        headers: headrers,
+      ),
     );
 
     return switch (result) {
       Success(data: final data) => await _handleSuccess(
         endpoint: endpoint,
-        params: params,
-        data: data,
+        queryParameters: queryParameters,
         mapData: mapData,
+        data: data,
       ),
       Error(error: final error) => ApiResult.error(error),
     };
@@ -60,22 +71,18 @@ abstract class BaseRepository {
 
   Future<ApiResult<T>> _handleSuccess<T, R>({
     required String endpoint,
-    required Map<String, dynamic>? params,
-    required R data,
+    required Map<String, dynamic>? queryParameters,
     required T Function(R data) mapData,
+    required R data,
   }) async {
-    // Map the data first to ensure it's valid
     final mappedData = mapData(data);
 
-    // Try to cache the raw data, but don't let cache failures affect the result
     try {
-      await _cacheService.cacheData(endpoint: endpoint, params: params, data: data);
+      await _cacheService.cacheData(endpoint: endpoint, params: queryParameters, data: data);
     } catch (e) {
-      // Log the cache error but don't fail the operation
       debugPrint('Cache error: $e');
     }
 
-    // Return the mapped data regardless of cache success
     return ApiResult.success(data: mappedData);
   }
 }
